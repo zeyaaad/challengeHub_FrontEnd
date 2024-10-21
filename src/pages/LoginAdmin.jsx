@@ -62,10 +62,10 @@ export default function LogIAdmin() {
         <hr />
         {err && <p className='alert alert-danger text-center'>{err}</p>}
         <form onSubmit={handelLogin}>
-          <label className='mt-3' htmlFor="">Team Email:</label>
+          <label className='mt-3' htmlFor="">Admin Email:</label>
           <input onChange={(e) => setEmail(e.target.value)} type="text" className='form-control' />
           {emailErr&&<p className='text-danger' >{emailErr}</p>}
-          <label className='mt-3' htmlFor="">Password</label>
+          <label className='mt-3' htmlFor="">Admin Password</label>
           <input onChange={(e) => setPassword(e.target.value)} type="password" className='form-control' />
           {PasswordErr&&<p className='text-danger' >{PasswordErr}</p>}
           <button type="submit" className='btn btn-primary mt-4'>Login</button>
