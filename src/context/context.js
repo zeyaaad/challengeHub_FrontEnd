@@ -11,7 +11,7 @@ const MyProvider = ({ children }) => {
     const[isAdmin,setIsAdmin]=useState(null)
   const token=localStorage.getItem("app_token")
   const adminToken=localStorage.getItem("admin_token")
-    const Host="http://localhost:3000";
+    const Host="https://challengehubbackend.vercel.app";
 
   
 
