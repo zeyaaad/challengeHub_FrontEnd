@@ -23,7 +23,7 @@ export default function Footer() {
             
             <li><Link to="/login">LogIn</Link></li>
             <li><Link to="/register">Register</Link></li>
-            <li><Link to="/login-admin">Admin Dashboard</Link></li>
+            <li><Link to="/admin-login">Admin Dashboard</Link></li>
             </>
             }
             
