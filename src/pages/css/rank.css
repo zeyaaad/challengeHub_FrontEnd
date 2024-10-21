@@ -1,0 +1,20 @@
+.allRankes{
+    width: 60%;
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 14px -10px white;
+}
+
+@media(max-width:980px){
+    .allRankes{
+        width: 100%;
+    }
+}
+.rank {
+    text-align: center;
+    box-shadow: 0px 0px 16px -10px white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px ;
+}

@@ -1,0 +1,115 @@
+/* Navbar styles */
+.navbar {
+    background-color: #343a40;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar-container {
+            z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    width: 80px; /* Adjust logo size as needed */
+    margin: 0 !important;
+}
+
+.navbar-toggler {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hide the button on large screens */
+}
+
+.navbar-links {
+            z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.navbar-links.open {
+    display: flex; /* Show links */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #495057;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #495057;
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block; /* Show toggle button on small screens */
+    }
+
+    .navbar-links {
+        z-index: 1000;
+        display: none; /* Hide links initially */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+        position: absolute; /* Position absolutely */
+        top: 60px; /* Adjust based on your navbar height */
+        left: 0;
+        background-color: #343a40; /* Match the navbar background */
+    }
+}

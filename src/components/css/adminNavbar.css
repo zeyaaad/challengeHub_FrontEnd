@@ -1,0 +1,174 @@
+General Styles
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+}
+.adminnavbar.navbar {
+  width: 250px; 
+  height: 100vh; 
+  background-color: #004085; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed; 
+  top: 0; 
+  transition: width 0.3s ease;
+}
+
+.adminnavbar.navbar.closed {
+  width: 80px; 
+}
+
+.adminnavbar.nav-links {
+  list-style-type: none;
+  padding: 0; 
+  flex-grow: 1; 
+}
+
+.adminnavbar.nav-links li {
+  padding: 15px 10px; 
+}
+
+.adminnavbar.nav-links li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center; /* Center icons and text */
+}
+
+.adminnavbar.nav-links li a .icon {
+  margin-right: 15px; 
+}
+
+.adminnavbar.nav-links li a:hover {
+  background-color: #0056b3; 
+}
+
+.adminnavbar.navbar.closed .nav-links li a span {
+  display: none;
+}
+
+.adminnavbar.toggle-btn {
+  background-color: transparent; 
+  border: none; 
+  color: white; 
+  cursor: pointer; 
+  font-size: 24px;
+  align-self: flex-end; 
+}
+
+.adminnavbar.dashboard-home {
+  margin-left: 250px; 
+  padding: 20px; 
+  transition: margin-left 0.3s ease; 
+
+}
+
+  .adminnavbar.navbar.closed ~ .dashboard-home {
+  margin-left: 80px; 
+}
+
+@media (max-width: 768px) {
+  .adminnavbar .navbar {
+    position: fixed;
+    width: 100%; 
+    height: auto; 
+    
+    bottom: 0;
+    flex-direction: row; 
+    justify-content: space-around; 
+  }
+
+  .adminnavbar.navbar.open {
+    height: auto;
+  }
+
+  .adminnavbar.navbar.closed {
+    height: 60px; 
+  }
+
+  .adminnavbar.nav-links {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+  }
+
+  .adminnavbar.nav-links li {
+    padding: 10px;
+  }
+
+  .adminnavbar.dashboard-home {
+    margin-left: 0; 
+    padding: 15px; 
+  }
+}
+
+@media (min-width: 769px) {
+  .adminnavbar .navbar {
+    width: 250px;
+  }
+
+  .adminnavbar .dashboard-home {
+    margin-left: 270px;
+  }
+}
+
+.adminnavbar .nav-links {
+  list-style-type: none;
+  height: 90%;
+
+  padding: 10px 0px;
+}
+
+.adminnavbar .nav-links li {
+margin-top: 20px !important;
+  padding: 10px 15px;
+}
+
+.adminnavbar .nav-links li a {
+  text-decoration: none;
+  display: flex; 
+  align-items: center; 
+  transition: background-color 0.3s;
+}
+
+.adminnavbar .nav-links li:hover {
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white; 
+}
+
+.adminnavbar .nav-links li.active  {
+  border-radius: 6px;
+  background-color: #007bff; 
+  color: white; 
+}
+
+.adminnavbar .icon {
+  margin-right: 10px;
+  font-size: 1.2em; 
+}
+.alllayout{
+  padding: 20px;
+  padding-bottom: 40px !
+  ;
+  overflow-y: auto !important;
+  height: 100vh;
+}
+
+
+
+
