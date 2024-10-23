@@ -64,7 +64,7 @@ export default function Login() {
     setLoader(false);
   }
   return (
-  Loader&&<Loading/>
+    {Loader&&<Loading/>}
     <div>
       <div className="loginform text-white">
         <h2>Login now:</h2>
