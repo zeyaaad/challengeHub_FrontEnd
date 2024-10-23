@@ -122,7 +122,9 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='loginform'>
+  <>
+    
+        <form onSubmit={handleSubmit} className='loginform'>
         <h2> Register  </h2>
         <hr />
         {Errorr&&<div className='alert alert-danger text-center'> {Errorr}  </div>}
@@ -209,6 +211,8 @@ const Register = () => {
       {/* Submit Button */}
       <button className='btn btn-primary mt-3' type="submit">Register</button>
     </form>
+  
+  </>
   );
 };
 
