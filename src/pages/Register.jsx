@@ -4,6 +4,7 @@ import axios from 'axios';
 import { MyContext } from '../context/context';
 import "./css/auth.css";
 import { useNavigate } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 const Register = () => {
   const [formData, setFormData] = useState({ 
@@ -20,6 +21,7 @@ const Register = () => {
   const [teamType, setTeamType] = useState(0); 
   const { Host } = useContext(MyContext);
   let[Errorr,setErrorr]=useState(null)
+  let[loading,setLoadin]=usestata(false):
   const schema = Joi.object({
     name: Joi.string().pattern(/^[a-zA-Z0-9 _]+$/).required().label('Team Name'),
     email: Joi.string().email({ tlds: { allow: false } }).required().label('Email'),
@@ -84,6 +86,7 @@ const Register = () => {
   };
 
   const handleSubmit = async (e) => {
+    setLoadin(true);
     e.preventDefault();
 
     if (formData.type === 0) {
@@ -94,6 +97,7 @@ const Register = () => {
     if (validationErrors) {
       setErrors(validationErrors);
       console.log(validationErrors);
+      setLoadin(false);
       return;
     }
 
@@ -104,6 +108,7 @@ const Register = () => {
       const response = await axios.post(`${Host}/api/auth/register`, formData);
       console.log(response.data);
       setErrorr(null)
+      setLoadin(false);
       go("/login");
   
     } catch (error) {
@@ -112,7 +117,7 @@ const Register = () => {
         }else {
             setErrorr("Wrong to register")
         }
-      console.error(error);
+      setLoadin(false);
     }
   };
 
