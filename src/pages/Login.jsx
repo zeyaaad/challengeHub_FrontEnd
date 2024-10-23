@@ -4,6 +4,7 @@ import { MyContext } from '../context/context'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {jwtDecode} from 'jwt-decode';
+import Loading from '../components/Loading';
 
 export default function Login() {
   const { Host, getToken, setIsLogIn } = useContext(MyContext);
@@ -13,23 +14,27 @@ export default function Login() {
   let go = useNavigate()
   let [emailErr,setEmailErr]=useState(null)
   let [PasswordErr,setPasswordErr]=useState(null)
+  let[Loader,setLoader]=useState(false)
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   }
 
   const handelLogin = async (e) => {
+    setLoader(true)
     e.preventDefault();
 
     if (!validateEmail(email)) {
       setEmailErr("Please enter a valid email.");
       return;
+      setLoader(false);
     }else{
       setEmailErr("");
     }
 
     if (password.length < 6) {
       setPasswordErr("Password must be at least 6 characters long.");
+      setLoader(false);
       return;
     }else {
       setPasswordErr("");
@@ -44,7 +49,7 @@ export default function Login() {
       localStorage.setItem("app_token", res.data.token);
       localStorage.setItem("team_name", decoded.name);
       localStorage.setItem("team_data", JSON.stringify(decoded));
-
+      setLoader(false);
       setIsLogIn(true)
       go("/home")
     } catch (error) {
@@ -54,10 +59,12 @@ export default function Login() {
         setErr("Error logging in.");
       }
       console.log(error)
+      setLoader(false);
     }
+    setLoader(false);
   }
-
   return (
+  Loader&&<Loading/>
     <div>
       <div className="loginform text-white">
         <h2>Login now:</h2>
