@@ -47,14 +47,19 @@ export default function AllScores() {
                 <th> Action </th>
             </thead>
             <tbody>
-                {data.data.map((item)=><tr>
+                {data.data.map((item)=>
+            <>
+                {itea.team_id?.name&&<tr>
                     <td> {item.team_id.name} </td>
                     <td> {item.team_id.email} </td>
                     <td> {item.final_result} </td>
                     <td> {formatDate(item.createdAt)} </td>
                     <td> <Link to={`/scoreDetalis/${item._id}`} className='btn btn-primary' > View More Details </Link> </td>
                     
-                </tr>)}
+                </tr>}
+                
+            </>
+                )}
             </tbody>
         </table>
         
